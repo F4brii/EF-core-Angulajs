@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-6">
+        <h1>Listado de Blogs</h1>
+    </div>
+    <div class="col-6">
+        <button class="float-right btn btn-primary" [routerLink]="['/blogs']">Agregar Blog</button>
+    </div>
+</div>
+<div class="spinner-border" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+</div>
+<div class="mt-4">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Blog Id</th>
+                <th scope="col">Url</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let blog  of Blogs">
+                <td>
+                    <a [routerLink]="['/blogs/see/', blog.blogId]">
+                        {{blog.blogId}}
+                    </a>
+                </td>
+                <td> {{blog.url}}</td>
+                <td>
+                    <div class="row">
+                        <button class="btn btn-primary mr-4">Editar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

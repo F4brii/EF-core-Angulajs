@@ -1,0 +1,18 @@
+<div class="mt-4">
+    <h1 class="mb-5">Agregar Blog</h1>
+    <form [formGroup] = "Blog" (ngSubmit) = "saveBlog()" >
+        <div class="form-group">
+            <label for="BlogId">Blog Id</label>
+            <input type="text" class="form-control" id="BlogId" formControlName='blogId'>
+            <span class="text-danger ml-4" *ngIf="Blog.get('blogId').hasError('required')">
+                Este campo es requerido.
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="url">Url</label>
+            <input type="text" class="form-control" id="url" formControlName='url'>
+        </div>
+        <button type="submit" class="btn btn-primary mr-4" [disabled]="!Blog.valid">Agregar</button>
+        <button type="submit" class="btn btn-secondary"  [routerLink]="['/']">Cancelar</button>
+    </form>
+</div>
