@@ -1,0 +1,2 @@
+sacar copia : docker exec -t your-db-container pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+Importar copia: cat dump.sql | docker exec -i 03100eb59540 psql -U postgres

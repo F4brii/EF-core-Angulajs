@@ -1,0 +1,27 @@
+version: "3.6"
+
+networks: 
+  api:
+    driver: "bridge"
+
+services:
+  db:
+    image: postgres:11.1
+    environment:
+      POSTGRES_DB: asp
+      POSTGRES_PASSWORD: Assemblix86
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    networks: 
+      - api
+
+  backend:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks: 
+      - api

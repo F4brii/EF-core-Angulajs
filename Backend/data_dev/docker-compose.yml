@@ -1,0 +1,18 @@
+version: "3.6"
+
+networks: 
+  dev:
+    driver: "bridge"
+
+services:
+  db:
+    image: postgres:11.1
+    environment:
+      POSTGRES_DB: asp
+      POSTGRES_PASSWORD: Assemblix86
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks: 
+      - dev
