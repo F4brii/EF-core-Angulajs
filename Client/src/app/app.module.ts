@@ -13,6 +13,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { MainPostComponent } from './Components/Post/main-post/main-post.component';
 import { SeeBlogComponent } from './Components/Blog/see-blog/see-blog.component';
 import { PostBlogComponent } from './Components/Blog/post-blog/post-blog.component';
+import { CreatePostComponent } from './Components/Post/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PostBlogComponent } from './Components/Blog/post-blog/post-blog.compone
     NavbarComponent,
     MainPostComponent,
     SeeBlogComponent,
-    PostBlogComponent
+    PostBlogComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
